@@ -26,7 +26,7 @@ async function startServer() {
   app.use(errorHandler);
 
   // ! Before I listen, I want to connect to the database!
-  await connectToDb();
+  await connectToDB();
 
   app.listen(PORT, () => console.log(`Express server running on Port ${PORT}`));
 }

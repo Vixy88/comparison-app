@@ -1,9 +1,9 @@
 import express from "express";
 // ? Import all my controllers
-import companyController from "../controllers/movieController.js";
+import companyController from "../controllers/companyController.js";
 import userController from "../controllers/userController.js";
 import repairController from "../controllers/repairController.js";
-import ratingController from "../controllers/ratingController.js";
+// import ratingController from "../controllers/ratingController.js";
 import auth from "../middleware/auth.js";
 import { check } from "express-validator";
 
@@ -17,17 +17,17 @@ router.get("/", (req, res) => {
 // ! COMPANY ROUTES
 router
   .route("/companies")
-  .get(companyController.index)
+  // .get(companyController.index)
   .post(auth, companyController.createCompany);
 
 router
   .route("/company/:id")
-  .get(companyController.show)
+  // .get(companyController.show)
   .delete(companyController.deleteCompany);
 
-router
-  .route("/company/update-description/:id")
-  .put(auth, companyController.updateDescription);
+// router
+//   .route("/company/update-description/:id")
+//   .put(auth, companyController.updateDescription);
 
 // Route to display all registered users
 router.route("/users").get(userController.index);
@@ -42,18 +42,18 @@ router.route("/repair/:id").delete(repairController.deleteRepair);
 
 // ! RATING ROUTES
 
-// Route to create ratings
-router.route("/company/:companyId/rating").post(
-  auth,
-  [check("text", "Text is missing").notEmpty()], // checks if the comment has the required text element
-  ratingController.create
-);
+// // Route to create ratings
+// router.route("/company/:companyId/rating").post(
+//   auth,
+//   [check("text", "Text is missing").notEmpty()], // checks if the comment has the required text element
+//   ratingController.create
+// );
 
-// Route to update a specific rating
-router
-  .route("/company/:companyId/rating/:ratingId")
-  .put(auth, ratingController.update)
-  .delete(auth, ratingController.remove);
+// // Route to update a specific rating
+// router
+//   .route("/company/:companyId/rating/:ratingId")
+//   .put(auth, ratingController.update)
+//   .delete(auth, ratingController.remove);
 
 // ! AUTH ROUTES
 

@@ -1,13 +1,14 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
 // ? Function connects to the database
-export async function connectToDb() {
+export async function connectToDB() {
   const opts = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   };
   // ? Mongoose connect returns a promise.
-  return mongoose.connect("mongodb://127.0.0.1:27017/companies", opts);
+  return mongoose.connect(process.env.ATLAS_URI, opts);
 }
 
 export async function disconnectDb() {
