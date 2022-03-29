@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 router
   .route("/companies")
   // .get(companyController.index)
-  .post(auth, companyController.createCompany);
+  .post(companyController.createCompany);
 
 router
   .route("/company/:id")

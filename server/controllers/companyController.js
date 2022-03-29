@@ -1,8 +1,6 @@
 import Company from "../models/company.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import User from "../models/user.js";
-import company from "../models/company.js";
 
 // ! CREATE A NEW COMPANY
 async function createCompany(req, res, next) {
@@ -18,7 +16,7 @@ async function createCompany(req, res, next) {
     }
 
     // ! Creates a new company on the database
-    const createdCompany = await Company.createCompany(newCompany);
+    const createdCompany = await Company.create(newCompany);
     console.log(createdCompany);
     res.status(201).json(createdCompany);
   } catch (e) {

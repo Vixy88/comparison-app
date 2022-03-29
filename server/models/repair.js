@@ -9,6 +9,8 @@ const repairSchema = new mongoose.Schema({
     required: true,
   },
   description: { type: String, required: true },
+  frontImg: { type: String },
+  backImg: { type: String },
   postcode: { type: Number, required: false, unique: false },
   eMail: { type: String, required: false, unique: false, maxLength: 50 },
   registeredAt: { type: Date, default: Date.now },
