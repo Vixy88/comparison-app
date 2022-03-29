@@ -10,7 +10,7 @@ const repairSchema = new mongoose.Schema({
   },
   description: { type: String, required: true },
   postcode: { type: Number, required: false, unique: false },
-  eMail: { type: String, required: false, unique: true, maxLength: 50 },
+  eMail: { type: String, required: false, unique: false, maxLength: 50 },
   registeredAt: { type: Date, default: Date.now },
 });
 
