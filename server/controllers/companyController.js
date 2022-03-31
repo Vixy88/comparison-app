@@ -1,13 +1,14 @@
 import Company from "../models/company.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import company from "../models/company.js";
 
 // ! CREATE A NEW COMPANY
 async function createCompany(req, res, next) {
   const newCompany = req.body; // This gives us an object (the company we want to make)
   try {
     const companyFound = await Company.findOne({
-      name: newCompany.companyName,
+      companyName: newCompany.companyName,
     });
     if (companyFound) {
       return res.status(400).json({
@@ -27,9 +28,10 @@ async function createCompany(req, res, next) {
 // ! DELETE A COMPANY
 async function deleteCompany(req, res, next) {
   const companyId = req.params.id;
+  console.log(companyId);
   try {
-    const deletedCompany = await Company.findOneAndDelete({ _id: id });
-    console.log(deletedCompany);
+    const deletedCompany = await Company.findOneAndDelete({ _id: companyId });
+    console.log(`${deletedCompany.companyName} has been deleted`);
     if (!deletedCompany) {
       return res.status(400).json({
         message: `We were not able to find a company with the id of ${companyId}, please check your details and try again`,
@@ -40,7 +42,19 @@ async function deleteCompany(req, res, next) {
   }
 }
 
+// ! SHOW ALL COMPANIES
+async function index(req, res) {
+  try {
+    // ! Find the companies in mongodb
+    const companies = await Company.find();
+    res.send(companies);
+  } catch (e) {
+    res.send({ message: "there was a problem finding your companies" });
+  }
+}
+
 export default {
   createCompany,
   deleteCompany,
+  index,
 };

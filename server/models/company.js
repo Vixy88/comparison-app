@@ -12,6 +12,7 @@ const companySchema = new mongoose.Schema({
   description: { type: String, required: false },
   companyImg: { type: String },
   email: { type: String, required: true, unique: true },
+  website: { type: String, required: false },
   number: { type: Number, required: false, unique: true },
   postcode: { type: String, required: true },
   address: { type: String, required: true },

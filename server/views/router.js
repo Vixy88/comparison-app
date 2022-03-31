@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 // ! COMPANY ROUTES
 router
   .route("/companies")
-  // .get(companyController.index)
+  .get(companyController.index)
   .post(companyController.createCompany);
 
 router
