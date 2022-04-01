@@ -25,15 +25,18 @@ function CompanyList() {
       <h2>List of all companies</h2>
       <div className="d-flex justify-content-between flex-wrap">
         {companyData.map((company, idx) => (
-          <div className="card" style={{ width: "18rem" }} key={idx}>
+          <div className="card mb-5" style={{ width: "25rem" }} key={idx}>
             <img src={company.companyImg} className="card-img-top" />
             <div className="card-body">
               <h4 className="card-title">{company.companyName}</h4>
-              <p className="card-text">{company.website}</p>
+              <p className="card-text">{company.description}</p>
+              <a href={company.website} target="_blank">
+                {company.website}
+              </a>
               <p className="card-text">{company.postcode}</p>
             </div>
-            <a href="#" className="btn btn-warning">
-              Email
+            <a href={`mailto: ${company.email}`} className="btn btn-warning">
+              Contact
             </a>
           </div>
         ))}

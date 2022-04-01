@@ -4,10 +4,11 @@ const Header = () => {
   return (
     <>
       <header>
-        <nav class="nav nav-pills flex-column flex-sm-row">
+        <nav className="nav nav-pills flex-sm-row justify-content-between">
+          <h3>Electronic Repair</h3>
           <Link to="/" className="text-decoration-none">
             <a
-              class="flex-sm-fill text-sm-center nav-link active"
+              className="flex-sm-fill text-sm-center nav-link link-dark"
               aria-current="page"
               href="#"
             >
@@ -16,7 +17,7 @@ const Header = () => {
           </Link>
           <Link to="/repair" className="text-decoration-none">
             <a
-              class="flex-sm-fill text-sm-center nav-link"
+              className="flex-sm-fill text-sm-center nav-link link-dark"
               aria-current="page"
               href="#"
             >
@@ -25,29 +26,35 @@ const Header = () => {
           </Link>
           <Link to="/companies" className="text-decoration-none">
             <a
-              class="flex-sm-fill text-sm-center nav-link"
+              className="flex-sm-fill text-sm-center nav-link link-dark"
               aria-current="page"
               href="#"
             >
               All Companies
             </a>
           </Link>
-          <Link to="/createcompany" className="text-decoration-none">
+          {/* <Link to="/createcompany" className="text-decoration-none">
             <a
-              class="flex-sm-fill text-sm-center nav-link"
+              className="flex-sm-fill text-sm-center nav-link link-dark"
               aria-current="page"
               href="#"
             >
               Register new company
             </a>
-          </Link>
-          <Link to="/register" className="text-decoration-none">
-            <a class="flex-sm-fill text-sm-center nav-link" href="#">
+          </Link> */}
+          {/* <Link to="/register" className="text-decoration-none">
+            <a
+              className="flex-sm-fill text-sm-center nav-link link-dark"
+              href="#"
+            >
               Register new user
             </a>
-          </Link>
+          </Link> */}
           <Link to="/login" className="text-decoration-none">
-            <a class="flex-sm-fill text-sm-center nav-link" href="#">
+            <a
+              className="flex-sm-fill text-sm-center nav-link link-dark"
+              href="#"
+            >
               Login
             </a>
           </Link>

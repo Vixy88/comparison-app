@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function LoginUser() {
   const [formData, setFormData] = useState({});
@@ -26,14 +27,40 @@ function LoginUser() {
 
   const renderLoginForm = (
     <form onSubmit={onLogin}>
-      <input type="text" placeholder="Email" name="eMail" onChange={onChange} />
-      <input
-        type="password"
-        placeholder="Password"
-        name="password"
-        onChange={onChange}
-      />
-      <button type="submit">Login</button>
+      <div className="mb-3">
+        <label for="email" className="form-label">
+          Email address
+        </label>
+        <input
+          type="text"
+          placeholder="Email"
+          id="email"
+          name="eMail"
+          className="form-control"
+          onChange={onChange}
+        />
+      </div>
+      <div className="mb-3">
+        <label for="password" className="form-label">
+          Password
+        </label>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          name="password"
+          className="form-control"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <button type="submit" className="btn btn-warning">
+          Login
+        </button>
+        <div>
+          <Link to="/register">Create User</Link>
+        </div>
+      </div>
     </form>
   );
 

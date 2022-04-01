@@ -36,19 +36,48 @@ function CreateRepair() {
 
   const renderRegForm = (
     <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        placeholder="Item Name"
-        name="itemName"
-        onChange={onChange}
-      />
-      <input type="text" placeholder="Item " name="eMail" onChange={onChange} />
-      <input
-        type="text"
-        placeholder="Description"
-        name="description"
-        onChange={onChange}
-      />
+      <div className="mb-3">
+        <label for="itemName" className="form-label">
+          Item to repair
+        </label>
+        <input
+          type="text"
+          placeholder="Item Name"
+          name="itemName"
+          className="form-control"
+          onChange={onChange}
+        />
+      </div>
+      <div className="mb-3">
+        <label for="type" className="form-label">
+          Item type
+        </label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          onChange={onChange}
+        >
+          <option selected>Tell us what item it is</option>
+          <option value="mobile">Mobile</option>
+          <option value="computer">Computer</option>
+          <option value="watch">Watch</option>
+          <option value="jewellery">Jewellery</option>
+        </select>
+      </div>
+
+      <div className="mb-3">
+        <label for="description" className="form-label">
+          Describe the issue
+        </label>
+        <textarea
+          type="text"
+          placeholder="Description"
+          name="description"
+          className="form-control"
+          onChange={onChange}
+        />
+      </div>
+
       {/* <div className="m-3">
         <label className="mx-3">Upload Front Image: </label>
         <input className="d-none" type="file" name="frontImg" />
@@ -59,19 +88,36 @@ function CreateRepair() {
         <input className="d-none" type="file" name="backImg" />
         <button className="btn btn-outline-primary">Select</button>
       </div> */}
-      <input
-        type="text"
-        placeholder="Postcode"
-        name="postcode"
-        onChange={onChange}
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        name="eMail"
-        onChange={onChange}
-      />
-      <button type="submit">Create Repair</button>
+
+      <div className="mb-3">
+        <label for="postcode" className="form-label">
+          Enter your postcode
+        </label>
+        <input
+          type="text"
+          placeholder="Postcode"
+          name="postcode"
+          className="form-control"
+          onChange={onChange}
+        />
+      </div>
+      <div>
+        <label for="eMail" className="form-label">
+          Enter your Email
+        </label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="eMail"
+          className="form-control"
+          onChange={onChange}
+        />
+      </div>
+      <div className="mt-3">
+        <button type="submit" className="btn btn-warning">
+          Create Repair
+        </button>
+      </div>
     </form>
   );
 
