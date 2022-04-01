@@ -43,7 +43,7 @@ router.route("/users").get(userController.index);
 // ! REPAIR ROUTES
 
 // Route to create repair
-router.route("/repairs").post(repairController.createRepair);
+router.route("/repair").post(repairController.createRepair);
 
 // Route to delete repair
 router.route("/repair/:id").delete(repairController.deleteRepair);

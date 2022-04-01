@@ -8,7 +8,7 @@ const repairSchema = new mongoose.Schema({
     enum: ["mobile", "computer", "watch", "jewellery"],
     required: true,
   },
-  description: { type: String, required: true },
+  description: { type: String, required: false },
   frontImg: { type: String },
   backImg: { type: String },
   postcode: { type: Number, required: false, unique: false },
