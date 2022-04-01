@@ -8,9 +8,10 @@ const userSchema = new mongoose.Schema({
   eMail: { type: String, required: false, unique: true, maxLength: 50 },
   password: { type: String, required: true },
   role: { type: String, enum: ["admin", "user", "partner"], default: "user" },
+  profileImg: { type: String },
   registeredAt: { type: Date, default: Date.now },
 });
 
-// * Registering your schema with mongoose as a model.
+// * Registering the schema with mongoose as a model.
 // * It uses the first argument ('User') as a unique reference.
 export default mongoose.model("User", userSchema);
