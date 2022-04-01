@@ -29,6 +29,14 @@ router
 //   .route("/company/update-description/:id")
 //   .put(auth, companyController.updateDescription);
 
+// ! USER ROUTES
+
+// Register Controller
+router.route("/register").post(userController.register);
+
+// Login Controller
+router.route("/login").post(userController.login);
+
 // Route to display all registered users
 router.route("/users").get(userController.index);
 
@@ -54,12 +62,5 @@ router.route("/repair/:id").delete(repairController.deleteRepair);
 //   .route("/company/:companyId/rating/:ratingId")
 //   .put(auth, ratingController.update)
 //   .delete(auth, ratingController.remove);
-
-// ! AUTH ROUTES
-
-// Register Controller
-router.route("/register").post(userController.register);
-// Login Controller
-router.route("/login").post(userController.login);
 
 export default router;

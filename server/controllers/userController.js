@@ -55,8 +55,7 @@ async function login(req, res, next) {
 
     console.log(process.env.JWT_SECRET);
     const token = jwt.sign(payload, process.env.JWT_SECRET);
-    console.log(token);
-    res.status(200).json({ message: "Login Successful ✅", token });
+    res.status(200).json({ message: "Login Successful ✅" });
     console.log("User logged in successfully");
   } catch (e) {
     next(e);
