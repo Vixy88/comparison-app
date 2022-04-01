@@ -9,7 +9,7 @@ async function createRepair(req, res, next) {
   const newRepair = req.body; // This gives us an object (the repair we want to make)
   try {
     // ! Creates a new repair on the database
-    const createdRepair = await Repair.createRepair(newRepair);
+    const createdRepair = await Repair.create(newRepair);
     console.log(createdRepair);
     res.status(201).json(createdRepair);
   } catch (e) {

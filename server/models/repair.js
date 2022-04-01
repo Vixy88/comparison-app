@@ -6,12 +6,11 @@ const repairSchema = new mongoose.Schema({
   itemType: {
     type: String,
     enum: ["mobile", "computer", "watch", "jewellery"],
-    required: true,
   },
   description: { type: String, required: false },
   frontImg: { type: String },
   backImg: { type: String },
-  postcode: { type: Number, required: false, unique: false },
+  postcode: { type: String, required: false, unique: false },
   eMail: { type: String, required: false, unique: false, maxLength: 50 },
   registeredAt: { type: Date, default: Date.now },
 });

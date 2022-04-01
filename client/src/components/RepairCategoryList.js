@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const RepairCategoryList = () => {
   return (
     <>
@@ -14,9 +16,11 @@ const RepairCategoryList = () => {
               Screen repair, battery replacement and all other Iphone repair
               services.
             </p>
-            <a href="#" className="btn btn-warning">
-              Start Repair
-            </a>
+            <Link to="/repair">
+              <a href="#" className="btn btn-warning">
+                Start Repair
+              </a>
+            </Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -31,9 +35,11 @@ const RepairCategoryList = () => {
               Screen repair, battery replacement and all other Iphone repair
               services.
             </p>
-            <a href="#" className="btn btn-warning">
-              Start Repair
-            </a>
+            <Link to="/repair">
+              <a href="#" className="btn btn-warning">
+                Start Repair
+              </a>
+            </Link>
           </div>
         </div>
         <div className="card" style={{ width: "18rem" }}>
@@ -48,9 +54,11 @@ const RepairCategoryList = () => {
               Find the best repair shops for your laptop! Screen repair,
               microphone repair, speaker repair.
             </p>
-            <a href="#" className="btn btn-warning">
-              Start Repair
-            </a>
+            <Link to="/repair">
+              <a href="#" className="btn btn-warning">
+                Start Repair
+              </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -58,7 +58,6 @@ function RegisterUser() {
 
   return (
     <div className="App">
-      <h1>Register</h1>
       {userCreated ? (
         <div>Your new user has been created! 🎯 </div>
       ) : (

@@ -83,7 +83,6 @@ function RegisterCompany() {
 
   return (
     <div className="App">
-      <h1>Register</h1>
       {companyCreated ? (
         <div>Your company has been created! 🎯 </div>
       ) : (
