@@ -31,6 +31,8 @@ async function startServer() {
   app.listen(process.env.PORT || 4000, () =>
     console.log(`Express server running on Port ${PORT}`)
   );
+
+  app.get('/', (req, res) => { res.send('Hello from Express!')
 }
 
 startServer();
