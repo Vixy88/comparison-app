@@ -28,11 +28,7 @@ async function startServer() {
   // ! Before I listen, I want to connect to the database!
   await connectToDB();
 
-  app.listen(process.env.PORT || 4000, () =>
-    console.log(`Express server running on Port ${PORT}`)
-  );
-
-  app.get('/', (req, res) => { res.send('Hello from Express!')
+  app.listen(PORT, () => console.log(`Express server running on Port ${PORT}`));
 }
 
 startServer();
