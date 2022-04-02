@@ -1,12 +1,11 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import axios from "axios";
-import UploadButton from "./UploadButton";
 import CompanyList from "./companyList";
 
 function CreateRepair() {
   const [formData, setFormData] = useState({});
   const [repairCreated, setRepairCreated] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState(null);
 
   // const inputRef = useRef < HTMLInputElement > null;
 
@@ -16,7 +15,7 @@ function CreateRepair() {
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log({ ...formData, [e.target.name]: e.target.value });
+    // console.log({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {

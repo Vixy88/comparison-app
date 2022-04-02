@@ -4,7 +4,7 @@ import axios from "axios";
 function RegisterCompany() {
   const [formData, setFormData] = useState({});
   const [companyCreated, setCompanyCreated] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState(null);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

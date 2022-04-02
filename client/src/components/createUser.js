@@ -4,7 +4,7 @@ import axios from "axios";
 function RegisterUser() {
   const [formData, setFormData] = useState({});
   const [userCreated, setUserCreated] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+  // const [errorMessage, setErrorMessage] = useState(null);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
